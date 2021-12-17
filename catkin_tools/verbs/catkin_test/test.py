@@ -163,7 +163,7 @@ def test_workspace(
         build_type = pkg.get_build_type()
 
         if build_type == 'catkin':
-            test_job_kwargs['test_target'] = catkin_test_target
+            test_job_kwargs['test_target'] = 'run_tests_%s_gtest' % pkg.name
         elif build_type == 'cmake':
             test_job_kwargs['test_target'] = cmake_test_target
 
